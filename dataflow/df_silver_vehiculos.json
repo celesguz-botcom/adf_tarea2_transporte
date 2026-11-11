@@ -34,7 +34,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          AnioFuente as string,",
+				"          AnioFuente as short,",
 				"          VehiculoId as string,",
 				"          Placa as string,",
 				"          TipoVehiculo as string,",
@@ -50,7 +50,7 @@
 				"source1 derive(Placa = upper(trim(Placa)),",
 				"          TipoVehiculo = upper(trim(TipoVehiculo)),",
 				"          Estado = upper(trim(Estado)),",
-				"          AnioFuente = year(toDate(VigenciaDesde, 'dd/MM/yyyy'))) ~> derivedColumn1",
+				"          AnioFuente = toShort(year(toDate(VigenciaDesde, 'dd/MM/yyyy')))) ~> derivedColumn1",
 				"derivedColumn1 derive(CapacidadEfectiva = toInteger(trim(CapacidadEfectiva)),",
 				"          VigenciaDesde = iif(\r",
 				"    instr(VigenciaDesde, '/') > 0,\r",

@@ -37,7 +37,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          AnioFuente as string,",
+				"          AnioFuente as short,",
 				"          ParadaHistoricaId as string,",
 				"          CodigoPublicado as string,",
 				"          NombreParada as string,",
@@ -57,7 +57,7 @@
 				"          Zona = upper(trim(Zona)),",
 				"          Estado = upper(trim(Estado)),",
 				"          CodigoPublicado = ParadaHistoricaId,",
-				"          AnioFuente = year(toDate(VigenciaDesde, 'dd/MM/yyyy'))) ~> derivedColumn1",
+				"          AnioFuente = toShort(year(toDate(VigenciaDesde, 'dd/MM/yyyy')))) ~> derivedColumn1",
 				"derivedColumn1 derive(Latitud = toDecimal(trim(Latitud)),",
 				"          Longitud = toDecimal(trim(Longitud))) ~> derivedColumn2",
 				"derivedColumn2 derive(VigenciaDesde = iif(\r",

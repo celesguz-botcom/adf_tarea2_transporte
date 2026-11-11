@@ -37,7 +37,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          AnioFuente as string,",
+				"          AnioFuente as short,",
 				"          DemandaId as string,",
 				"          FechaServicio as string,",
 				"          RutaHistoricaId as string,",
@@ -61,7 +61,8 @@
 				"    toInteger(ValidacionesTarjeta)\r",
 				"),",
 				"          Metodo = upper(trim(Metodo)),",
-				"          FechaServicio = iif(isNull(FechaServicio) || trim(FechaServicio) == '' || FechaServicio == 'NULL', '1900-01-01', trim(FechaServicio))) ~> derivedColumn2",
+				"          FechaServicio = iif(isNull(FechaServicio) || trim(FechaServicio) == '' || FechaServicio == 'NULL', '1900-01-01', trim(FechaServicio)),",
+				"          AnioFuente = toShort(year(toDate(FechaServicio)))) ~> derivedColumn2",
 				"derivedColumn1 keyGenerate(output(DemandaId as long),",
 				"     startAt: 1L,",
 				"     stepValue: 1L) ~> surrogateKey1",
@@ -95,6 +96,8 @@
 				"          ParadaHistoricaId,",
 				"          Franja,",
 				"          ValidacionesTarjeta,",
+				"          Descensos,",
+				"          DemandaNoAtendida,",
 				"          Metodo",
 				"     )) ~> sink1"
 			]

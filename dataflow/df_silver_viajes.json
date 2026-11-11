@@ -34,7 +34,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          AnioFuente as string,",
+				"          AnioFuente as short,",
 				"          ViajeId as string,",
 				"          RutaHistoricaId as string,",
 				"          VehiculoId as string,",
@@ -53,7 +53,7 @@
 				"source1 derive(RutaHistoricaId = upper(trim(RutaHistoricaId)),",
 				"          VehiculoId = upper(trim(VehiculoId)),",
 				"          EstadoViaje = upper(trim(EstadoViaje)),",
-				"          AnioFuente = year(toDate(FechaServicio, 'yyyy-MM-dd'))) ~> derivedColumn1",
+				"          AnioFuente = toShort(year(toDate(FechaServicio, 'yyyy-MM-dd')))) ~> derivedColumn1",
 				"derivedColumn1 derive(KmRecorridos = iif(isNull(KmRecorridos), '0.0', replace(toString(KmRecorridos), ',', '.')),",
 				"          ValidacionesTarjeta = iif(\r",
 				"    isNull(ValidacionesTarjeta) || trim(ValidacionesTarjeta) == '',\r",
