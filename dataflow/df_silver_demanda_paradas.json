@@ -88,14 +88,13 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
+				"          AnioFuente,",
 				"          DemandaId,",
 				"          FechaServicio,",
 				"          RutaHistoricaId,",
 				"          ParadaHistoricaId,",
 				"          Franja,",
 				"          ValidacionesTarjeta,",
-				"          Descensos,",
-				"          DemandaNoAtendida,",
 				"          Metodo",
 				"     )) ~> sink1"
 			]

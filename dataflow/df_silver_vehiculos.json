@@ -50,7 +50,7 @@
 				"source1 derive(Placa = upper(trim(Placa)),",
 				"          TipoVehiculo = upper(trim(TipoVehiculo)),",
 				"          Estado = upper(trim(Estado)),",
-				"          AnioFuente = toString(year(toDate(VigenciaDesde, 'dd/MM/yyyy')))) ~> derivedColumn1",
+				"          AnioFuente = year(toDate(VigenciaDesde, 'dd/MM/yyyy'))) ~> derivedColumn1",
 				"derivedColumn1 derive(CapacidadEfectiva = toInteger(trim(CapacidadEfectiva)),",
 				"          VigenciaDesde = iif(\r",
 				"    instr(VigenciaDesde, '/') > 0,\r",

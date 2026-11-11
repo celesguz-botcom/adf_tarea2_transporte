@@ -53,7 +53,7 @@
 				"source1 derive(RutaHistoricaId = upper(trim(RutaHistoricaId)),",
 				"          VehiculoId = upper(trim(VehiculoId)),",
 				"          EstadoViaje = upper(trim(EstadoViaje)),",
-				"          AnioFuente = toString(year(toDate(FechaServicio, 'yyyy-MM-dd')))) ~> derivedColumn1",
+				"          AnioFuente = year(toDate(FechaServicio, 'yyyy-MM-dd'))) ~> derivedColumn1",
 				"derivedColumn1 derive(KmRecorridos = iif(isNull(KmRecorridos), '0.0', replace(toString(KmRecorridos), ',', '.')),",
 				"          ValidacionesTarjeta = iif(\r",
 				"    isNull(ValidacionesTarjeta) || trim(ValidacionesTarjeta) == '',\r",

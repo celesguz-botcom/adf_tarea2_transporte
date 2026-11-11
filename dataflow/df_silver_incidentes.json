@@ -53,7 +53,7 @@
 				"     format: 'table') ~> source1",
 				"source1 derive(TipoIncidente = upper(trim(TipoIncidente)),",
 				"          Severidad = upper(trim(Severidad)),",
-				"          AnioFuente = toString(year(toDate(FechaHoraRegistro, 'dd/MM/yyyy')))) ~> derivedColumn1",
+				"          AnioFuente = year(toDate(FechaHoraRegistro, 'dd/MM/yyyy'))) ~> derivedColumn1",
 				"derivedColumn1 derive(VehiculoId = iif(isNull(VehiculoId) || VehiculoId == '', 'No asignado', trim(VehiculoId)),",
 				"          Descripcion = trim(Descripcion)) ~> derivedColumn2",
 				"derivedColumn2 derive(FechaHoraInicio = iif(\r",
