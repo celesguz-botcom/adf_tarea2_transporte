@@ -101,8 +101,8 @@
 				"          Estado as string",
 				"     ),",
 				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:true,",
+				"     insertable:false,",
+				"     updateable:false,",
 				"     upsertable:true,",
 				"     keys:['AnioFuente','ParadaHistoricaId'],",
 				"     format: 'table',",
@@ -111,15 +111,7 @@
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          AnioFuente,",
-				"          ParadaHistoricaId,",
-				"          CodigoPublicado,",
-				"          NombreParada,",
-				"          Zona,",
-				"          Latitud,",
-				"          Longitud,",
-				"          VigenciaDesde,",
-				"          VigenciaHasta,",
-				"          Estado",
+				"          ParadaHistoricaId",
 				"     )) ~> sink1"
 			]
 		}
