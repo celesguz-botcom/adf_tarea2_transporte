@@ -144,7 +144,6 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          AnioFuente,",
 				"          ParadaHistoricaId,",
 				"          CodigoPublicado,",
 				"          NombreParada,",
