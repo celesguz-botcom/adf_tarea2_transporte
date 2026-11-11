@@ -33,6 +33,9 @@
 				},
 				{
 					"name": "derivedColumn3"
+				},
+				{
+					"name": "AlterRow1"
 				}
 			],
 			"scriptLines": [
@@ -82,7 +85,8 @@
 				"    toDate(VigenciaHasta, 'dd/MM/yyyy'),\r",
 				"    toDate(VigenciaHasta, 'yyyy-MM-dd')\r",
 				")) ~> derivedColumn3",
-				"derivedColumn3 sink(allowSchemaDrift: true,",
+				"derivedColumn3 alterRow(upsertIf(true())) ~> AlterRow1",
+				"AlterRow1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          AnioFuente as integer,",
@@ -98,8 +102,9 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
+				"     updateable:true,",
+				"     upsertable:true,",
+				"     keys:['AnioFuente','ParadaHistoricaId'],",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
