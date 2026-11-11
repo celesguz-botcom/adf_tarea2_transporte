@@ -145,7 +145,6 @@
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          ParadaHistoricaId,",
-				"          CodigoPublicado,",
 				"          NombreParada,",
 				"          Zona,",
 				"          Latitud,",
