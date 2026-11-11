@@ -101,7 +101,7 @@
 				"    )\r",
 				")) ~> derivedColumn3",
 				"derivedColumn1 keyGenerate(output(RutaHistoricaId as long),",
-				"     startAt: 1L,",
+				"     startAt: 100L,",
 				"     stepValue: 1L) ~> surrogateKey1",
 				"derivedColumn3 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
